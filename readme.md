@@ -55,7 +55,7 @@ The concept for ResponsivePresets is to group screen resolutions in classes that
 <responsivepresets>
 	<preset prefix="mobile" minwidth="0" maxwidth="480" />
 	<preset prefix="tablet" minwidth="481" maxwidth="1440" />
-	<preset prefix="desktop" minwidth="1441" maxwidth="2549" />
+	<preset prefix="desktop" minwidth="1441" maxwidth="2559" />
 	<preset prefix="hires" minwidth="2560" maxwidth="0" />
 </responsivepresets>
 ```
