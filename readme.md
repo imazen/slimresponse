@@ -1,4 +1,4 @@
-# ResponsivePresets for ImageResizer.Net
+# ResponsivePresets for ImageResizer.Net [BETA!]
 **Vary ImageResizer preset names by client resolution for automatic image resizing according to responsive webdesign practices.**
 
 ---
