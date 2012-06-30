@@ -60,7 +60,7 @@ The concept for ResponsivePresets is to group screen resolutions in classes that
 </responsivepresets>
 ```
  
-Define which prefix will be used for which range of the screen width. The list is processed top to bottom, first match wins. This values do **not** resize images to these widths, but segment the devices by their available screen width.
+Define which prefix will be used for which range of the screen width. The list is processed top to bottom, first match wins. These values do **not** resize images to these widths, but segment the devices by their available screen width.
  
 You are free to segment and structure to your liking, this allows ResponsivePresets to adapt to almost any requirement.
 
