@@ -2,7 +2,6 @@
   var responsivePresets = win.responsivePresets || {},
 
     doc = window.document,
-    docHead = doc.getElementsByTagName("head")[0],
     screenWidth = win.screen.availWidth,
     cookieName = "responsive-width" /* if you change this, you need to change server-side the code too! */,
 
