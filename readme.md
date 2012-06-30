@@ -40,7 +40,7 @@ ResponsivePresets works in team with the standard Presets plugin for ImageResize
 	</plugins>  
 </resizer>  
 ```
-Install the HttpModule to handle cookie-less requests (either first page hit or i.e. search engine crawlers):
+Install the HttpModule to handle cookie-less requests (either first page hit or i.e. search engine crawlers) in `<system.webServer>`, `<modules>`:
 
 ```xml
 <add name="ResponsivePresetsFilterModule" type="ResponsivePresets.FilterModule.RegisterFilterModule, ResponsivePresets"/>
