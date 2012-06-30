@@ -1,9 +1,9 @@
-(function(win){
+(function(win) {
   var responsivePresets = win.responsivePresets || {},
 
     doc = window.document,
     screenWidth = win.screen.availWidth,
-    cookieName = "responsive-width" /* if you change this, you need to change server-side the code too! */,
+    cookieName = "responsive-width", /* if you change this, you need to change server-side the code too! */
 
 	setCookie = function()
     {

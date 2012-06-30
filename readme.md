@@ -102,10 +102,10 @@ Useragents that support javascript will request the most suitable higher-level v
 ```
 
 ### 4. Prepare your markup
-* Reference the client library for ResponsivePresets:
+* Reference the (minified) client library for ResponsivePresets:
 
 ```html
-	<script src="/ResponsivePresets-ImageResizer.js"></script>
+	<script src="/ResponsivePresets-ImageResizer.min.js"></script>
 ```
 
 * Adjust image source attribute: Instead of adding a fixed preset name to the image's request string, write the base preset name and prepend a dot to indicate you want this image to be extended by ResponsivePresets:
