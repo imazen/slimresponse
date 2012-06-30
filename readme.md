@@ -23,7 +23,7 @@ Licensed under the [MIT Licence](http://www.opensource.org/licenses/mit-license.
 
 ## How to use
 
-ResponsivePresets extends the presets that are available with ImageResizer. **With a simple dot-notation, you can enable screen resolution aware dynamic resizing for some or all your images.**
+ResponsivePresets extends the presets that are available with ImageResizer. **With a simple dot-notation, you can enable screen resolution aware dynamic resizing for some - or all - of your images.**
 
 ### 1. Enable ResponsivePresets plugin
 
