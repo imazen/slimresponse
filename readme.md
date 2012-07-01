@@ -26,7 +26,7 @@ Licensed under the [MIT Licence](http://www.opensource.org/licenses/mit-license.
 ResponsivePresets extends the presets that are available with ImageResizer. **With a simple dot-notation, you can enable screen resolution aware dynamic resizing for some - or all - of your images.**
 
 **Tipp**
->You can also [download](https://github.com/downloads/mindrevolution/ImageResizer-ResponsivePresets/ImageResizer-ResponsivePresets-DemoSite.zip) a self-contained sample package (including compiled assemblies) for an effortless test run in i.e. Webmatrix instead of building all yourself.
+>You can run the www-folder in WebMatrix right after cloning the repo, as the assembly binaries are included for easy testing.
 
 ### 1. Enable ResponsivePresets plugin
 
