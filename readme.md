@@ -25,6 +25,9 @@ Licensed under the [MIT Licence](http://www.opensource.org/licenses/mit-license.
 
 ResponsivePresets extends the presets that are available with ImageResizer. **With a simple dot-notation, you can enable screen resolution aware dynamic resizing for some - or all - of your images.**
 
+**Tipp**
+>You can also [download](https://github.com/downloads/mindrevolution/ImageResizer-ResponsivePresets/ImageResizer-ResponsivePresets-DemoSite.zip) a self-contained sample package (including compiled assemblies) for an effortless test run in i.e. Webmatrix instead of building all yourself.
+
 ### 1. Enable ResponsivePresets plugin
 
 ResponsivePresets works in team with the standard Presets plugin for ImageResizer, so you need to enable and configure that as well. Deploy the assembly and activate the plugin:
@@ -131,6 +134,9 @@ ResponsivePresets **uses cookies to speed up subsequent requests** of the same c
 Due to the nature that ResponsivePresets uses the requesting device's screen resolution to determine how to resize the image, making the browser window smaller will still get you "big images". Your system is still capable of a higher resolution, you simply aren't using it. Because many i.e. portable devices can be rotated, ResponsivePresets doesn't use the viewport size but the maximum available resolution the client is capable as ways to to determine the suitable preset. This has drawbacks and side effects, but works quite well and the overall improvement of the user's experience is greatly enhanced by using ResponsiovePresets.
 
 *Don't just make your desktop browser's window smaller: You simply can't test this way!* Better use a real i.e. mobile device like an iPhone or Nokia Lumia or a tablet like an ASUS Transformer or iPad. Of course you can also lower your screen resolution settings or use a VM or mobile emulator (i.e. Windows Phone Emulator, iPhone Simulator)
+
+#### Edge caching servers
+Edge caching servers like CloudFront can't vary the request by cookie but only by querystring. Because of that ResponsivePresets will most likely not work in edge caching scenarios until further notice.
 
 ----
 
