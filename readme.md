@@ -23,21 +23,12 @@ ResponsivePresets extends the presets that are available with ImageResizer. **Wi
 **Tipp**
 >You can run the www-folder in WebMatrix right after cloning the repo, as the assembly binaries are included for easy testing.
 
-### 1. Enable ResponsivePresets plugin
+### 1. Enable ResponsivePresets
 
 ResponsivePresets works in team with the standard Presets plugin for ImageResizer, so you need to enable and configure that as well. Deploy the assembly and activate the plugin:
 * Copy ResponsivePresets.dll to /bin/
 * Copy HtmlAgilityPack.dll to /bin/
-* Enable the plugin in web.config (or exteral configuration file) by adding `<add name="ResponsivePresets" />` to the plugins section of ImageResizer. In case you've never done that before, here's a snippet to get you started:
 
-```xml
-<resizer>  
-	<plugins>  
-		<add name="Presets" />  
-		<add name="ResponsivePresets" />  
-	</plugins>  
-</resizer>  
-```
 Install the HttpModule that activates the request filter which transforms img tags with an dot-notation preset to full blown picture elements in `<system.webServer>`, `<modules>`:
 
 ```xml
