@@ -1,5 +1,4 @@
 # ResponsivePresets 2.0 for ImageResizer.Net
->>>>>>> created version 2
 **Vary ImageResizer preset names by client resolution for automatic image resizing according to responsive webdesign practices.**
 
 ---
