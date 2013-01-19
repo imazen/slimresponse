@@ -40,6 +40,7 @@
       <HintPath>..\www\bin\ImageResizer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -49,14 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilterModule\CookielessParser.cs" />
-    <Compile Include="ImageResizerPlugin\Plugin.cs" />
+    <Compile Include="FilterModule\MarkupParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FilterModule\RegisterFilterModule.cs" />
     <Compile Include="FilterModule\ResponseFilterStream.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ImageResizerPlugin\PresetPrefix.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
