@@ -1,10 +1,14 @@
-# ResponsivePresets 2.0 for ImageResizer.Net
-**Vary ImageResizer preset names by client resolution for automatic image resizing according to responsive webdesign practices.**
+# ResponsivePresets 2.0 for ImageResizer.Net [EXPERIMENTAL]
+**Effortless reponsive images powered by ImageResizer.Net**
 
----
 
 ##Introduction
 Licensed under the [MIT Licence](http://www.opensource.org/licenses/mit-license.php), which allows open source as well as commercial use.
+
+###What does it to?
+* Converts image tags using [ImageResizer presets](http://imageresizing.net/plugins/presets) to picture tags (as currently proposed by the [Responsive Images Community Group](http://www.w3.org/community/respimg/). 
+* Varies [ImageResizer preset names](http://imageresizing.net/plugins/presets) by media-queries and device pixel ratio for automatic image resizing according to responsive webdesign practices.
+
 
 ### Requirements
 * ASP.Net 4.0
