@@ -82,7 +82,6 @@ namespace ResponsivePresets.FilterModule
 
                             // - append fallback image
                             HtmlNode fallbackContainer = doc.CreateElement("noscript");
-                            fallbackImg.Attributes.Add("class", "foo, bar");
                             fallbackContainer.AppendChild(fallbackImg);
                             img.AppendChild(fallbackContainer);
                         }
