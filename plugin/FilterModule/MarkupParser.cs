@@ -59,17 +59,21 @@ namespace ResponsivePresets.FilterModule
                                         if (c.Attributes["media"]!=null)
                                             source.Attributes.Add("media", c.Attributes["media"].Value);
 
-                                        // - generate x1, x2, x3, x4 (for now ...) if requested to do so
                                         string srcsetBase = img.Attributes["src"].Value.Replace("preset=.", "preset=" + name + ".");
-                                        StringBuilder srcset = new StringBuilder();
+                                        // - generate x1, x2, x3, x4 (for now ...) if requested to do so
                                         if (respectPixelDensity)
                                         {
+                                            StringBuilder srcset = new StringBuilder();
                                             for (int i = 1; i <= 4; i++)
                                             {
                                                 srcset.Append(srcsetBase + "&zoom=" + i + " " + i + "x, ");
                                             }
+                                            source.Attributes.Add("srcset", srcset.ToString().Trim().TrimEnd(','));
                                         }
-                                        source.Attributes.Add("srcset", srcset.ToString().Trim().TrimEnd(','));
+                                        else
+                                        {
+                                            source.Attributes.Add("src", srcsetBase.ToString().Trim());
+                                        }
 
                                         // - add this "source" tag  as a new "img" child
                                         img.ChildNodes.Add(source);
@@ -77,7 +81,7 @@ namespace ResponsivePresets.FilterModule
                                 }
                             }
 
-                            // - remove "src" from "picture" (leftover from this beeing a "img" tag)
+                            // - remove "src" from "picture" (leftover from this being a "img" tag)
                             img.Attributes.Remove("src");
 
                             // - append fallback image
