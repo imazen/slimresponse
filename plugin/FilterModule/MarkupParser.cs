@@ -31,64 +31,66 @@ namespace ResponsivePresets.FilterModule
                 foreach (HtmlNode img in doc.DocumentNode.SelectNodes("//img[@src]"))
                 {
                     HtmlAttribute src = img.Attributes["src"];
-                    if (src != null)
+                    if (src != null && src.Value.ToLowerInvariant().IndexOf("preset=.") != -1)
                     {
-                        if (src.Value.ToLowerInvariant().IndexOf("preset=.") != -1)
+                        HtmlNode fallbackImg = img.Clone();
+
+                        // - make this "img" a "picture"
+                        img.Name = "picture";
+
+                        // - get presets from config
+                        var configSection = WebConfigurationManager.GetSection("resizer") as ImageResizer.ResizerSection;
+                        XmlElement conf = configSection.getCopyOfNode("responsivepresets").ToXmlElement();
+                        XmlNode defaultPrefix = conf.SelectSingleNode("preset[@default='true']/@prefix");
+
+                        // - set default preset as fallback image
+                        if (defaultPrefix != null)
+                            fallbackImg.Attributes["src"].Value = fallbackImg.Attributes["src"].Value.Replace("preset=.", "preset=" + defaultPrefix.Value + ".");
+
+                        // - filter configuration
+                        bool respectPixelDensity = (conf.Attributes["respectPixelDensity"].Value == "true");
+
+                        // - add "source" tag for each preset item
+                        if (conf.ChildNodes != null && conf.HasChildNodes)
                         {
-                            HtmlNode fallbackImg = img.Clone();
-
-                            // - make this "img" a "picture"
-                            img.Name = "picture";
-
-                            // - get presets from config
-                            var configSection = WebConfigurationManager.GetSection("resizer") as ImageResizer.ResizerSection;
-                            XmlElement conf = configSection.getCopyOfNode("responsivepresets").ToXmlElement();
-
-                            // - filter configuration
-                            bool respectPixelDensity = (conf.Attributes["respectPixelDensity"].Value == "true");
-
-                            // - add "source" tag for each preset item
-                            if (conf.ChildNodes != null && conf.HasChildNodes)
+                            foreach (XmlNode c in conf.ChildNodes)
                             {
-                                foreach (XmlNode c in conf.ChildNodes)
+                                string name = c.Attributes["prefix"].Value;
+                                if (c.Name.Equals("preset", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    string name = c.Attributes["prefix"].Value;
-                                    if (c.Name.Equals("preset", StringComparison.OrdinalIgnoreCase))
+                                    HtmlNode source = doc.CreateElement("source");
+                                    if (c.Attributes["media"]!=null)
+                                        source.Attributes.Add("media", c.Attributes["media"].Value);
+
+                                    string srcsetBase = img.Attributes["src"].Value.Replace("preset=.", "preset=" + name + ".");
+                                    // - generate x1, x2, x3, x4 (for now ...) if requested to do so
+                                    if (respectPixelDensity)
                                     {
-                                        HtmlNode source = doc.CreateElement("source");
-                                        if (c.Attributes["media"]!=null)
-                                            source.Attributes.Add("media", c.Attributes["media"].Value);
-
-                                        string srcsetBase = img.Attributes["src"].Value.Replace("preset=.", "preset=" + name + ".");
-                                        // - generate x1, x2, x3, x4 (for now ...) if requested to do so
-                                        if (respectPixelDensity)
+                                        StringBuilder srcset = new StringBuilder();
+                                        for (int i = 1; i <= 4; i++)
                                         {
-                                            StringBuilder srcset = new StringBuilder();
-                                            for (int i = 1; i <= 4; i++)
-                                            {
-                                                srcset.Append(srcsetBase + "&zoom=" + i + " " + i + "x, ");
-                                            }
-                                            source.Attributes.Add("srcset", srcset.ToString().Trim().TrimEnd(','));
+                                            srcset.Append(srcsetBase + "&zoom=" + i + " " + i + "x, ");
                                         }
-                                        else
-                                        {
-                                            source.Attributes.Add("src", srcsetBase.ToString().Trim());
-                                        }
-
-                                        // - add this "source" tag  as a new "img" child
-                                        img.ChildNodes.Add(source);
+                                        source.Attributes.Add("srcset", srcset.ToString().Trim().TrimEnd(','));
                                     }
+                                    else
+                                    {
+                                        source.Attributes.Add("src", srcsetBase.ToString().Trim());
+                                    }
+
+                                    // - add this "source" tag  as a new "img" child
+                                    img.ChildNodes.Add(source);
                                 }
                             }
-
-                            // - remove "src" from "picture" (leftover from this being a "img" tag)
-                            img.Attributes.Remove("src");
-
-                            // - append fallback image
-                            HtmlNode fallbackContainer = doc.CreateElement("noscript");
-                            fallbackContainer.AppendChild(fallbackImg);
-                            img.AppendChild(fallbackContainer);
                         }
+
+                        // - remove "src" from "picture" (leftover from this being a "img" tag)
+                        img.Attributes.Remove("src");
+
+                        // - append fallback image
+                        HtmlNode fallbackContainer = doc.CreateElement("noscript");
+                        fallbackContainer.AppendChild(fallbackImg);
+                        img.AppendChild(fallbackContainer);
                     }
                 }
 
