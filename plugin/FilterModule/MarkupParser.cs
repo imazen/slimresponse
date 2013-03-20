@@ -28,7 +28,10 @@ namespace ResponsivePresets.FilterModule
                 doc.OptionFixNestedTags = false;
                 doc.OptionAutoCloseOnEnd = false;
                 doc.OptionCheckSyntax = false;
-                foreach (HtmlNode img in doc.DocumentNode.SelectNodes("//img[@src]"))
+                HtmlNodeCollection collection = doc.DocumentNode.SelectNodes("//img[@src]");
+                if (collection == null)
+                    return doc.DocumentNode.OuterHtml;
+                foreach (HtmlNode img in collection)
                 {
                     HtmlAttribute src = img.Attributes["src"];
                     if (src != null && src.Value.ToLowerInvariant().IndexOf("preset=.") != -1)
