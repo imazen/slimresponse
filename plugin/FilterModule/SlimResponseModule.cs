@@ -2,7 +2,7 @@
 using System.Web;
 using System.Net.Mime;
 
-namespace Imazen.SlimResponse.FilterModule
+namespace Imazen.SlimResponse
 {
     public class SlimResponseModule : System.Web.IHttpModule
     {
@@ -24,9 +24,9 @@ namespace Imazen.SlimResponse.FilterModule
         private void RegisterMarkupFilter(object sender, EventArgs e)
         {
             // - only kick in if not already done so
-            var context = HttpContext.Current;
+            var context = sender != null ? ((HttpApplication)sender).Context : null;
                 
-            if (!context.Items.Contains(moduleKey))
+            if (context != null && !context.Items.Contains(moduleKey))
             {
                 var response = context.Response;
                 var currentExecutionFilePath = context.Request.CurrentExecutionFilePath;

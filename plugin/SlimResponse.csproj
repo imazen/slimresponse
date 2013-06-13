@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="FilterModule\MarkupParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FilterModule\RegisterFilterModule.cs" />
+    <Compile Include="FilterModule\SlimResponseModule.cs" />
     <Compile Include="FilterModule\ResponseFilterStream.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

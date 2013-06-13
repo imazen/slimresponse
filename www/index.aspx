@@ -17,9 +17,9 @@
 			font-weight:normal;
 		}
 
-		.autoscale-width
+		.autoscale-widthy
 		{
-			width:100%;
+			max-width:100%;
 		}
 		
 		.logo
@@ -42,7 +42,7 @@
 		}
 	</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">		
-    <script src="/picturefill.js"></script>
+    <script src="slimmage.js"></script>
 </head>	
  
 <body>
@@ -53,7 +53,7 @@
             <iframe src="http://ghbtns.com/github-btn.html?user=mindrevolution&repo=ImageResizer-ResponsivePresets&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
         </h1>
 		
-        <img src="sample.jpg?preset=.galleryimage" class="autoscale-width" alt="sample"/>
+        <img src="sample.jpg?width=200&format=jpg&quality=90&slimmage=true" class="autoscale-width" alt="sample"/>
 		<p>Stuttgart, Germany (<a href="http://www.flickr.com/photos/jan_ortmann/7147983853/">Photo by jojonks via Flickr</a>)</p>
     </div>    
 </body>
