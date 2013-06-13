@@ -2,7 +2,7 @@
 using System.Web;
 using System.Net.Mime;
 
-namespace ResponsivePresets.FilterModule
+namespace Imazen.SlimResponse.FilterModule
 {
     public class ActivateFilterModule : System.Web.IHttpModule
     {

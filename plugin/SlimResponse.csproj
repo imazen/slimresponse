@@ -8,8 +8,8 @@
     <ProjectGuid>{E8729ED7-063B-4EA4-BD37-FE9070037FB2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ResponsivePresets</RootNamespace>
-    <AssemblyName>ResponsivePresets</AssemblyName>
+    <RootNamespace>Imazen.SlimResponse</RootNamespace>
+    <AssemblyName>Imazen.SlimResponse</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

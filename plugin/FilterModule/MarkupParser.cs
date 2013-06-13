@@ -6,7 +6,7 @@ using System.Web.Configuration;
 using HtmlAgilityPack;
 using System.Xml;
 
-namespace ResponsivePresets.FilterModule
+namespace Imazen.SlimResponse.FilterModule
 {
     public class MarkupParser
     {

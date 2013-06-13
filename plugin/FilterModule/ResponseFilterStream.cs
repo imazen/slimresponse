@@ -2,7 +2,7 @@
 using System.IO;
 using System.Web;
 
-namespace ResponsivePresets.FilterModule
+namespace Imazen.SlimResponse.FilterModule
 {
     /// <summary>
     /// A semi-generic Stream implementation for Response.Filter with an event interface for handling Content transformations via Stream or String.
