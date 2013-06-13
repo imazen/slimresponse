@@ -41,8 +41,7 @@ namespace Imazen.SlimResponse
                     if ((src != null && src.Value.IndexOf("slimmage=true", StringComparison.InvariantCultureIgnoreCase) > -1)
                         || (cls != null && cls.Value.IndexOf("slimmage",  StringComparison.InvariantCultureIgnoreCase) > -1))
                     {
-                        img.Attributes.Remove("src");
-
+                        
                         // - append fallback image
                         HtmlNode container = doc.CreateElement("noscript");
                         container.SetAttributeValue("data-slimmage", "true");

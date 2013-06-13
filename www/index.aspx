@@ -17,7 +17,7 @@
 			font-weight:normal;
 		}
 
-		.autoscale-widthy
+		.autoscale-width
 		{
 			max-width:100%;
 		}
