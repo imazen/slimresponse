@@ -4,9 +4,9 @@ using System.Net.Mime;
 
 namespace Imazen.SlimResponse.FilterModule
 {
-    public class ActivateFilterModule : System.Web.IHttpModule
+    public class SlimResponseModule : System.Web.IHttpModule
     {
-        public const string moduleKey = "ResponsivePresetsFilterModule.Installed";
+        public const string moduleKey = "SlimResponseModule.Installed";
 
         public void Dispose()
         {
