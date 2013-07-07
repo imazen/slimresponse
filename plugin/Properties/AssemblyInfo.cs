@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Imazen SlimResponse")]
-[assembly: AssemblyDescription("Enables responsive images using HTML filtering, ImageResizer, and Slimmage.js")]
+[assembly: AssemblyTitle("Imazen.SlimResponse - Auto-generate slimmage.js responsive images")]
+[assembly: AssemblyDescription("Enables effortless responsive images when combined with ImageResizer and Slimmage.js. Image tags with a class of 'slimmage' will be converted into responsive images.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Imazen (http://imazen.io)")]
 [assembly: AssemblyProduct("Imazen.SlimResponse")]
-[assembly: AssemblyCopyright("Copyright © 2013 Imazen, 2012 mindrevoluteion, esn303, MIT license")]
+[assembly: AssemblyCopyright("Copyright © 2013 Imazen")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.2.*")]
+[assembly: AssemblyFileVersion("0.2.0.0")]
