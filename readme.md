@@ -40,10 +40,11 @@ It then adds the appropriate markup to allow [slimmage.js](https://github.com/im
 * Outgoing HTML is only modified if a responsive image is present.
 * SlimResponse may mess up invalid HTML even further during parsing/serialization.
 * If you're only using responsive images in limited situations, an HTML helper that spits out [slimmage markup](https://github.com/imazen/slimmage) may be more appropriate.
-
+* SlimResponse does not include the [slimmage.js](https://github.com/imazen/slimmage) javascript file, that's your responsibility.
 
 ### Your web.config file must have both ImageResizer and SlimResponse installed
 
+```xml
 <?xml version="1.0"?>
 <configuration>
   <system.web>
@@ -62,6 +63,7 @@ It then adds the appropriate markup to allow [slimmage.js](https://github.com/im
     </modules>
   </system.webServer>
 </configuration>
+```
 
 Thanks to [esn303](https://twitter.com/#!/esn303) for creating [ImageResizer.ResponsivePresets](https://github.com/mindrevolution/ImageResizer-ResponsivePresets) and being the inspiration behind this project.
 
