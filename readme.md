@@ -11,7 +11,16 @@ SlimResponse looks through outgoing HTML for `<img>` tags with a `slimmage` clas
 
 ```html
 <img class="slimmage" src="image.jpg?width=150" />
+
+<img class="thisclass slimmage thatclass" src="image.jpg?width=150" />
 ```
+
+or for "slimmage=true" in any image URL
+
+```html
+<img src="image.jpg?width=150&slimmage=true" />
+```
+
 
 It then adds the appropriate markup to allow [slimmage.js](https://github.com/imazen/slimmage) to turn them into responsive images.
 
