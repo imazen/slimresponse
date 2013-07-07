@@ -1,6 +1,6 @@
 ## SlimResponse
 
-### Effortless reponsive images powered by [ImageResizer](http://imageresizing.net) and [Slimmage.js](https://github.com/imazen/slimmage)**
+### Effortless reponsive images powered by [ImageResizer](http://imageresizing.net) and [Slimmage.js](https://github.com/imazen/slimmage)
 
 Dual-licensed by Imazen under the [MIT](http://www.opensource.org/licenses/mit-license.php) and [Apache](http://www.apache.org/licenses/LICENSE-2.0.html) licenses.
 
