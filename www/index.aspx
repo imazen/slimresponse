@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>ImageResizer-ResponsivePresets by mindrevolution</title>
+    <title>SlimResponse - Effortless responsive images</title>
 	<style type="text/css">
 		body {
 			font-size:200%;
@@ -49,8 +49,8 @@
     <div>
 		<div>
 		<h1>
-            ResponsivePresets for ImageResizer
-            <iframe src="http://ghbtns.com/github-btn.html?user=mindrevolution&repo=ImageResizer-ResponsivePresets&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
+            SlimResponse, ImageResizer, & Slimmage
+            <iframe src="http://ghbtns.com/github-btn.html?user=imazen&repo=SlimResponse&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
         </h1>
 		
         <img src="sample.jpg?width=200&format=jpg&quality=90&slimmage=true" class="autoscale-width" alt="sample"/>

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ResponsivePresets for ImageResizer")]
-[assembly: AssemblyDescription("Combines ImageResizer.Net with some JavaScript to resize images for responsive web design")]
+[assembly: AssemblyTitle("Imazen SlimResponse")]
+[assembly: AssemblyDescription("Enables responsive images using HTML filtering, ImageResizer, and Slimmage.js")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("mindrevolution (http://github.com/mindrevolution)")]
-[assembly: AssemblyProduct("ResponsivePresets")]
-[assembly: AssemblyCopyright("Copyright © 2012 mindrevolution, esn303")]
+[assembly: AssemblyCompany("Imazen (http://imazen.io)")]
+[assembly: AssemblyProduct("Imazen.SlimResponse")]
+[assembly: AssemblyCopyright("Copyright © 2013 Imazen, 2012 mindrevoluteion, esn303, MIT license")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
