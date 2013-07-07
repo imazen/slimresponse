@@ -28,16 +28,44 @@ It then adds the appropriate markup to allow [slimmage.js](https://github.com/im
 
 ### Requirements
 * ASP.Net 4.0
-* [ImageResizer](http://imageresizing.net)
-* [slimmage.js](https://github.com/imazen/slimmage).
-
-
+* [ImageResizer](http://imageresizing.net) must be [installed](http://imageresizing.net/docs/install)
+* [slimmage.js](https://github.com/imazen/slimmage) must be included in your page's javascript. 
 
 ### Spin it up quickly for a test!
-* Use WebMatrix and fire it up on the "www"-folder, that's all!
+* Use WebMatrix or VisualStudio (Open Web Site) and fire it up on the "www"-folder, that's all!
 
+### Notes & Caveats 
+
+* This parses all outgoing HTML. This may increase CPU usage slightly. 
+* Outgoing HTML is only modified if a responsive image is present.
+* SlimResponse may mess up invalid HTML even further during parsing/serialization.
+* If you're only using responsive images in limited situations, an HTML helper that spits out [slimmage markup](https://github.com/imazen/slimmage) may be more appropriate.
+
+
+### Your web.config file must have both ImageResizer and SlimResponse installed
+
+<?xml version="1.0"?>
+<configuration>
+  <system.web>
+    <httpModules>
+      <!-- This is for IIS5, IIS6, and IIS7 Classic, and Cassini/VS Web Server-->
+      <add name="ImageResizingModule" type="ImageResizer.InterceptModule"/>
+      <add name="SlimResponseModule" type="Imazen.SlimResponse.SlimResponseModule, Imazen.SlimResponse"/>
+    </httpModules>
+    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID"/>
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true">
+      <!-- IIS7+ Integrated mode -->
+      <add name="ImageResizingModule" type="ImageResizer.InterceptModule"/>
+      <add name="SlimResponseModule" type="Imazen.SlimResponse.SlimResponseModule, Imazen.SlimResponse"/>
+    </modules>
+  </system.webServer>
+</configuration>
 
 Thanks to [esn303](https://twitter.com/#!/esn303) for creating [ImageResizer.ResponsivePresets](https://github.com/mindrevolution/ImageResizer-ResponsivePresets) and being the inspiration behind this project.
 
-
 This project is open to collaboration. **Fork. Push. Innovate.**
+
+
+
