@@ -9,7 +9,9 @@ Dual-licensed by Imazen under the [MIT](http://www.opensource.org/licenses/mit-l
 
 SlimResponse looks through outgoing HTML for `<img>` tags with a `slimmage` class applied, such as 
 
+```html
 <img class="slimmage" src="image.jpg?width=150" />
+```
 
 It then adds the appropriate markup to allow [slimmage.js](https://github.com/imazen/slimmage) to turn them into responsive images.
 
