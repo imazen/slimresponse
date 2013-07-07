@@ -53,7 +53,6 @@ It then adds the appropriate markup to allow [slimmage.js](https://github.com/im
       <add name="ImageResizingModule" type="ImageResizer.InterceptModule"/>
       <add name="SlimResponseModule" type="Imazen.SlimResponse.SlimResponseModule, Imazen.SlimResponse"/>
     </httpModules>
-    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID"/>
   </system.web>
   <system.webServer>
     <modules runAllManagedModulesForAllRequests="true">
