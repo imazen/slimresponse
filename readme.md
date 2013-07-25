@@ -22,7 +22,7 @@ or for "slimmage=true" in any image URL
 <img src="image.jpg?width=150&slimmage=true" />
 ```
 
-**Slimmage requires "width=[number]" be present in the URL. This value specifies the image size when javascript is disabled, but is modified by slimmage.js under normal circumstances.**
+**Slimmage requires "width=[number]" be present in the URL. This value specifies the image size when javascript is disabled, but is modified by slimmage.js under normal circumstances. If you prefer to use ImageResizer presets, you can omit the width parameter if your specified preset provides a width.**
 
 
 It then adds the appropriate markup to allow [slimmage.js](https://github.com/imazen/slimmage) to turn them into responsive images.
