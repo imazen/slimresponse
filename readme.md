@@ -6,6 +6,8 @@ Dual-licensed by Imazen under the [MIT](http://www.opensource.org/licenses/mit-l
 
 `Install-Package Imazen.SlimResponse`
 
+(Well, actually, you may also need to run `Install-Package HtmlAgilityPack`) The current release forgot to specify that dependency.
+
 ###What does it to?
 
 SlimResponse looks through outgoing HTML for `<img>` tags with a `slimmage` class applied, such as 
