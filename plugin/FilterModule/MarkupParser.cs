@@ -38,8 +38,8 @@ namespace Imazen.SlimResponse
                     HtmlAttribute src = img.Attributes["src"];
                     HtmlAttribute cls = img.Attributes["class"];
 
-                    if ((src != null && src.Value.IndexOf("slimmage=true", StringComparison.InvariantCultureIgnoreCase) > -1)
-                        || (cls != null && cls.Value.IndexOf("slimmage",  StringComparison.InvariantCultureIgnoreCase) > -1))
+                    if ((src != null && src.Value.IndexOf("slimmage=true", StringComparison.OrdinalIgnoreCase) > -1)
+                        || (cls != null && cls.Value.IndexOf("slimmage",  StringComparison.OrdinalIgnoreCase) > -1))
                     {
                         
                         // - append fallback image
