@@ -3,8 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimResponse", "SlimResponse.csproj", "{E8729ED7-063B-4EA4-BD37-FE9070037FB2}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www", "..\www\", "{51398F46-7C7C-43DB-A4C3-3E9BBB470F9F}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www(5)", "http://localhost:50940", "{51398F46-7C7C-43DB-A4C3-3E9BBB470F9F}"
 	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{e8729ed7-063b-4ea4-bd37-fe9070037fb2}|Imazen.SlimResponse.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/www"
@@ -21,7 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www", "..\www\", "{51398F46
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50940"
+		SlnRelativePath = "..\www\"
 	EndProjectSection
 EndProject
 Global

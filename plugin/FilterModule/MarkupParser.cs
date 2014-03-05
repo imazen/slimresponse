@@ -18,7 +18,7 @@ namespace Imazen.SlimResponse
             this.TextEncoding = encoding;
         }
 
-        public string TransformImgToPicture(string content)
+        public string TransformImgToSlimmage(string content)
         {
             try
             {
@@ -41,6 +41,20 @@ namespace Imazen.SlimResponse
                     if ((src != null && src.Value.IndexOf("slimmage=true", StringComparison.OrdinalIgnoreCase) > -1)
                         || (cls != null && cls.Value.IndexOf("slimmage",  StringComparison.OrdinalIgnoreCase) > -1))
                     {
+                        // - if no width set with querystring param, but preset name, get the width from the preset
+                        if ((src.Value.IndexOf("width=", StringComparison.InvariantCultureIgnoreCase) == -1)
+                            && (src.Value.IndexOf("preset=", StringComparison.InvariantCultureIgnoreCase) > -1))
+                        {
+                            // - get presets from config
+                            var configSection = WebConfigurationManager.GetSection("resizer") as ImageResizer.ResizerSection;
+                            XmlElement conf = configSection.getCopyOfNode("presets").ToXmlElement();
+                            // - find preset by name
+                            XmlNode curpreset = conf.SelectSingleNode(string.Format("preset[@name='{0}']/@defaults", System.Web.HttpUtility.ParseQueryString(src.Value.Substring(src.Value.IndexOf("?")))["preset"]));
+                            string presetWidth = System.Web.HttpUtility.ParseQueryString(curpreset.InnerText)["width"];
+
+                            // - append presets's default width to querystring
+                            src.Value = string.Format("{0}&width={1}", src.Value, presetWidth);
+                        }
                         
                         // - append fallback image
                         HtmlNode container = doc.CreateElement("noscript");
@@ -62,7 +76,7 @@ namespace Imazen.SlimResponse
             }
             catch(Exception ex)
             {
-                Trace.TraceWarning("SlimResponse failed to parse HTML: " + ex.ToString() + ex.StackTrace);
+                Trace.TraceWarning("SlimResponse failed to parse HTML: {0} {1}", ex.ToString(), ex.StackTrace);
                 // - better that nothing(tm) ...
                 //return content;
                 return ex.ToString();

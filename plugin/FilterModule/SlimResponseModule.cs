@@ -35,7 +35,7 @@ namespace Imazen.SlimResponse
                 {
                     var parser = new MarkupParser(response.ContentEncoding);
                     var filter = new ResponseFilterStream(response.Filter);
-                    filter.TransformString += new Func<string, string>(parser.TransformImgToPicture);
+                    filter.TransformString += new Func<string, string>(parser.TransformImgToSlimmage);
                     response.Filter = filter;
                 }
 
